@@ -1,0 +1,96 @@
+
+    {% extends 'roshannav.html' %}
+    {% block title %} Userlogin{% endblock %}
+    {% block content %}
+   
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Hide scrollbar when video is playing */
+            background-color: #333;
+        }
+
+       
+        .header,
+        .form-container {
+            position: relative;
+            z-index: 1; /* Bring these elements above the video */
+        }
+
+        .form-container {
+            padding: 46px;
+            margin-top: -80px;
+            margin-left: -100px;
+        }
+        .message{
+        z-index: 1000;
+      }
+      .login-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background color */
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    border: 2px solid #4CAF50; /* Green border */
+    transition: all 0.3s ease; /* Smooth transition effect */
+    margin-left: 690px;
+    margin-top: 20px;
+}
+
+.login-link:hover {
+    background-color: white; /* Change background color on hover */
+    color: #4CAF50; /* Change text color on hover */
+    border-color: #4CAF50; /* Change border color on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+}
+
+    </style>
+    <title>Register Page</title>
+</head>
+<body>
+
+      
+
+    <div class="header">
+        <!-- Your header content here -->
+    </div>
+    <div class="message">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}" id="flash-message">
+                {{ message }}
+                <span class="close-icon" onclick="hideMessage(this)">X</span>
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      </div>
+      
+    <section class="form-container">
+        <!-- Your form content here -->
+        <form method="post" action="{{ url_for('auth.loginn') }}" style="background-color: bisque;">
+            <h1 style="color: black;">User Login</h1>
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            <div class="input-field">
+                
+                <input type="email" name="email" style="color: black; background-color: white; border: 1px solid black;" placeholder="Enter your email" required>
+            </div>
+            <div class="input-field">
+               
+                <input type="password" name="password" style="color: black; background-color: white; border: 1px solid black;" placeholder="Your password" required>
+            </div>
+            <input type="submit" name="submit-btn" value="Login" class="btns">
+            <p style="color: black;">New User? <a href="{{ url_for('auth.register') }}">Register</a></p>
+            
+        </form>
+        
+        
+
+    </section>
+
+{% endblock %}

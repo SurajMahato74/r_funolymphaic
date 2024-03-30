@@ -1,0 +1,55 @@
+{% extends 'adminnav.html' %}
+    {% block title %} Dashboard {% endblock %}
+    {% block content %}
+<style>
+
+.dashcard{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    height: 120px;
+    align-items: center;
+    margin-left: 30px;
+    gap: 15px; 
+}
+
+.card{
+   padding: 10px; 
+}
+
+</style>
+ <section style="z-index: 1000; margin-top: 200px;" class="dashcard">  
+<div class="card" style="width: 18rem; z-index: 1000; border: 1px solid whitesmoke;">
+    <div class="card-body" style="z-index: 1000;">
+      <h1 class="card-title" style="z-index: 1000; font-size: 50px; color: blue;">7</h1>
+      <p class="card-text">Total User</p>
+      <i class="fa-solid fa-user" style="margin-right: 12px; margin-left: 170px;"></i><a href="{{url_for('auth.admintable')}}" class=" btn-primary" style="color: red;">See User</a><i class="fa-solid fa-arrow-right" style="margin-left: 15px;"></i>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; z-index: 1000; border: 1px solid whitesmoke;">
+    <div class="card-body" style="z-index: 1000;">
+      <h1 class="card-title" style="z-index: 1000; font-size: 50px; color: blue;">3</h1>
+      <p class="card-text">Ongoing Live</p>
+      <i class="fa-solid fa-camera" style="margin-right: 12px; margin-left: 170px; "></i><a href="{{url_for('auth.live')}}" class=" btn-primary" style="color: red;">Go Live</a><i class="fa-solid fa-arrow-right" style="margin-left: 15px;"></i>
+    </div>
+  </div>
+
+
+  <div class="card" style="width: 18rem; z-index: 1000; border: 1px solid whitesmoke;">
+    <div class="card-body" style="z-index: 1000;">
+      <h1 class="card-title" style="z-index: 1000; font-size: 50px; color: blue;">4</h1>
+      <p class="card-text">Total Highlits</p>
+      <i class="fa-solid fa-highlighter" style="margin-right: 12px; margin-left: 160px;"></i><a href="#" class=" btn-primary" style="color: red;">Highlights</a><i class="fa-solid fa-arrow-right" style="margin-left: 15px;"></i>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem; z-index: 1000; border: 1px solid whitesmoke;">
+    <div class="card-body" style="z-index: 1000;">
+      <h1 class="card-title" style="z-index: 1000; font-size: 50px; color: blue;">14</h1>
+      <p class="card-text">New Schedule</p>
+      <i class="fa-regular fa-clock" style="margin-right: 12px; margin-left: 170px;"></i><a href="#" class=" btn-primary" style="color: red;">Schedule</a><i class="fa-solid fa-arrow-right" style="margin-left: 15px;"></i>
+    </div>
+  </div>
+</section> 
+    {% endblock %}

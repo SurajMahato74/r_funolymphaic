@@ -1,0 +1,184 @@
+{% extends 'roshannav.html' %}
+{% block title %}Schedule{% endblock %}
+{% block content %}
+<style>
+   
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        z-index: 800;
+
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        z-index: 1000;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        z-index: 1000;
+    }
+
+    th {
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    tr:hover {
+        background-color: gray;
+        z-index: 1000;
+    }
+
+    .team {
+        font-weight: bold;
+        z-index: 1000;
+    }
+
+    .date {
+        width: 20%;
+        z-index: 1000;
+    }
+
+    .time {
+        width: 15%;
+        z-index: 1000;
+    }
+
+    .venue {
+        width: 30%;
+        z-index: 1000;
+    }
+
+    .status {
+        width: 15%;
+        z-index: 1000;
+    }
+
+    .status.upcoming {
+        color: #007bff;
+        z-index: 1000;
+    }
+
+    .status.completed {
+        color: #28a745;
+        z-index: 1000;
+    }
+
+    .status.live {
+        color: #dc3545;
+        z-index: 1000;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Match Schedule</h1>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Team 1</th>
+            <th>Team 2</th>
+            <th>Venue</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td class="date">March 31, 2024</td>
+            <td class="time">10:00 AM</td>
+            <td class="team">Team A</td>
+            <td class="team">Team B</td>
+            <td class="venue">Stadium XYZ</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+       
+        <tr>
+            <td>30 SAT</td>
+            <td>10:00 AM</td>
+            <td>ICC World Test Championship, 2023-2025<br>Sri Lanka in Bangladesh Test Series, 2023/24<br>Bangladesh v Sri Lanka at Chattogram, 2nd Test - day 1</td>
+            <td>Chattogram</td>
+            <td>Not Started</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+        <tr>
+            <td>30 SAT</td>
+            <td>2:00 PM</td>
+            <td>Lesotho in Eswatini T20I Series, 2023/24<br>Eswatini v Lesotho at Malkerns, 3rd T20I</td>
+            <td>Malkerns</td>
+            <td>Not Started</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+        <tr>
+            <td>30 SAT</td>
+            <td>6:00 PM</td>
+            <td>Papua New Guinea Women in Zimbabwe T20I Series, 2023/24<br>Zimbabwe Women v Papua New Guinea Women at Harare, 1st T20I</td>
+            <td>Harare</td>
+            <td>Not Started</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+        <tr>
+            <td>30 SAT</td>
+            <td>Not Available</td>
+            <td>Lesotho in Eswatini T20I Series, 2023/24<br>Eswatini v Lesotho at Malkerns, 4th T20I</td>
+            <td>Malkerns</td>
+            <td>Not Available</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+        <tr>
+            <td>30 SAT</td>
+            <td>Not Available</td>
+            <td>Sri Lanka Women in South Africa T20I Series, 2023/24<br>South Africa Women v Sri Lanka Women at Potchefstroom, 2nd T20I</td>
+            <td>Potchefstroom</td>
+            <td>Not Available</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+        <tr>
+            <td>31 SUN</td>
+            <td>10:00 AM</td>
+            <td>ICC World Test Championship, 2023-2025<br>Sri Lanka in Bangladesh Test Series, 2023/24<br>Bangladesh v Sri Lanka at Chattogram, 2nd Test - day 2</td>
+            <td>Chattogram</td>
+            <td>Not Started</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+        <tr>
+            <td>31 SUN</td>
+            <td>2:00 PM</td>
+            <td>Australia Women in Bangladesh T20I Series, 2023/24<br>Bangladesh Women v Australia Women at Mirpur, 1st T20I</td>
+            <td>Mirpur</td>
+            <td>Not Started</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+        <tr>
+            <td>31 SUN</td>
+            <td>6:00 PM</td>
+            <td>Lesotho in Eswatini T20I Series, 2023/24<br>Eswatini v Lesotho at Malkerns, 5th T20I</td>
+            <td>Malkerns</td>
+            <td>Not Started</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+        <tr>
+            <td>31 SUN</td>
+            <td>Not Available</td>
+            <td>Papua New Guinea Women in Zimbabwe T20I Series, 2023/24<br>Zimbabwe Women v Papua New Guinea Women at Harare, 2nd T20I</td>
+            <td>Harare</td>
+            <td>Not Available</td>
+            <td class="status upcoming">Upcoming</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

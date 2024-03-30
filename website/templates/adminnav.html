@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin Homepage</title>
+    <script src="/static/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+      .message{
+        z-index: 1000;
+      }
+
+      .user-detail{
+        border: 1 px solid white;
+        padding: 5px;
+        margin-top: 10px;
+        box-shadow: 5px;
+
+
+      }
+
+      .logout-link{
+        color: black;
+      }
+
+    .hero{
+        background-color: white;
+            .logout-link{
+        color: black;
+      }
+    }
+    .hero:hover{
+        background-color: black;
+        .logout-link:hover{
+            color: white;
+        } 
+    }
+    </style>
+</head>
+<body>
+ 
+<section class="secondsection">
+  <div class="header video" id="header">
+   
+
+<div class="nav" id="navbar">
+   
+  <div class="logo">
+    <a href="{{url_for('views.home')}}"><img src="/static/img/logo-removebg-preview.png"></a>
+   </div>
+  
+   <div class="login-menu" id="loginMenu" style="z-index: 1500;">
+    <ul>
+        {% if user %}
+        <div class="user-detail">
+            <div style="padding-bottom: 10px;">
+                <label>Email: <span class="strong">{{user.email}}</span></label>
+            </div>
+            <div style="padding-top: 10px;">
+                <label>Password: <span class="strong">{{user.name}}</span></label>
+            </div>
+            <div class="hero">
+            <hr style="margin-top: 25px;">
+            <li><a href="{{ url_for('auth.adminlogout') }}" class="logout-link">Logout</a></li>
+        </div>
+    </div>
+        {% else %}
+            <li><a href="{{ url_for('auth.loginn') }}">Login</a></li>
+        {% endif %}
+        <hr>
+       
+        
+        
+    </ul>
+</div>
+  <div class="icon">
+     
+    <a href="#"><i class="fa-regular fa-user" id="loginIcon"></i></a>
+  </div>
+  <ol>
+     
+      <a href="{{url_for('auth.radmindashboard')}}"><li>Dashboard</li></a> 
+      <a href="{{ url_for('auth.live_upload') }}"><li>Go live</li></a> 
+      <a href="{{ url_for('auth.admintable') }}"><li>Manage User</li></a>
+      <a href="{{ url_for('auth.firm') }}"><li>Upload Show</li></a>
+      
+  </ol>
+</div> 
+
+
+<div class="background-video">
+  <video autoplay loop muted>
+      <source src="/static/img/intro3.mp4" type="video/mp4">
+     
+  </video>
+</div>
+
+<div class="message">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}" id="flash-message">
+          {{ message }}
+          <span class="close-icon" onclick="hideMessage(this)">X</span>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+{% block content %}
+        
+{% endblock %}
+
+
+<script>
+    function hideMessage(element) {
+      element.parentElement.style.display = 'none';
+    }
+  </script>
+  </body>
+  </html>

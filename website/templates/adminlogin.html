@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>adminlogin</title>
+
+  <style>
+    .body{
+      background-color: black;
+      background: black;
+    }
+  
+  
+  .alert {
+    position: relative;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Add transition for smooth color change */
+  }
+  
+  .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  
+  .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  
+  .close-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.5; /* Initial opacity for X button */
+    transition: opacity 0.3s ease; /* Add transition for smooth opacity change */
+  }
+  
+  .close-icon:hover {
+    opacity: 1; /* Change opacity on hover */
+  }
+  
+  .message-box:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
+  }
+  
+  .brand-logo {
+  font-size: 24px;
+  color: #333; /* Adjust the color as needed */
+  margin-bottom: 20px;
+  }
+  
+  .form-cont {
+  max-width: 300px;
+  margin: 0 auto;
+  }
+  
+  .form-cont form {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+  }
+  
+  .form-cont form label {
+  display: block;
+  margin-bottom: 8px;
+  }
+  
+  .form-cont form input[type="email"],
+  .form-cont form input[type="password"],
+  .form-cont form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+  
+  .form-cont form input[type="submit"] {
+  background-color: #007bff; /* Blue button background */
+  color: #fff; /* White button text */
+  border: none;
+  cursor: pointer;
+  }
+  
+  .form-cont form input[type="submit"]:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+  }
+  
+  </style>
+</head>
+<body>
+  
+</head>
+<div class="message-box">
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}" id="flash-message">
+        {{ message }}
+        <span class="close-icon" onclick="hideMessage(this)">X</span>
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+</div>
+
+<body>
+<section class="login-form" style="z-index: 1000; margin-top: 20px;">
+  <a href="{{url_for('auth.login')}}"><input type="submit" value="login as user" style="background-color: #333; cursor: pointer; margin-left: 1200px; color: white; padding: 10px; margin-top: -50px;"></a>
+            <div class="brand-logo text-center" style="color: white;">
+             Admin Sign In
+            </div>
+            <div class="form-cont">
+            <form class="pt-3" action="{{ url_for('auth.adminlogin') }}" method="POST">
+                
+                <input type="email" style="color: black;" placeholder="enter email" id="email" name="email" required><br><br>
+               
+                <input type="password"  id="password" placeholder="password" name="password" required><br><br>
+                <input type="submit" value="Signup">
+              </form>
+          </form>
+        </div>
+       
+      </section>        
+</body>
+</html>
+
+      
+ 

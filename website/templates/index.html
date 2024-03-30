@@ -1,0 +1,388 @@
+{% extends 'roshannav.html' %}
+{% block title %} Homepage{% endblock %}
+{% block content %}
+
+
+<div class="background-video">
+  <video autoplay loop muted>
+      <source src="/static/img/intro3.mp4" type="video/mp4">
+     
+  </video>
+</div>
+
+<div class="message">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}" id="flash-message">
+          {{ message }}
+          <span class="close-icon" onclick="hideMessage(this)">X</span>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+
+<div class="quotesvideo">
+
+  <h4>Experience The Execlusive</h4>
+  <h1><b>OLYMPIC GAMES PARIS 2024</b></h1>
+
+</div>
+<div class="countdown-container" id="countdown">
+  <div class="picturea">
+    <img src="/static/img/logo-removebg-preview.png">
+  </div>
+  <div class="textappear">
+    Time left until the<br> Olympic Games Paris 2024
+  </div>
+  <div class="countdown-box">
+      <div class="countdown-number" id="days">00</div>
+      <div class="countdown-label">Days</div>
+  </div>
+  <div class="countdown-box">
+      <div class="countdown-number" id="hours">00</div>
+      <div class="countdown-label">Hours</div>
+  </div>
+  <div class="countdown-box">
+      <div class="countdown-number" id="minutes">00</div>
+      <div class="countdown-label">Minutes</div>
+  </div>
+  <div class="countdown-box">
+      <div class="countdown-number" id="seconds">00</div>
+      <div class="countdown-label">Seconds</div>
+  </div>
+
+</div>
+</div>
+
+</div>
+</section>
+<section class="some quotes">
+  <div class="divaftersection" id="divaf">
+
+
+
+</div>
+
+
+  <!-- Add these buttons where you want to trigger the next and previous slides -->
+<button id="prevButton" class="btn slideprev"><i class="fa-solid fa-backward"></i></button>
+<button id="nextButton" class="btn slidenext"><i class="fa-solid fa-forward"></i></button>
+
+<section class="listofticket">
+  <div class="themeregister">
+    <h1><span>Unleash</span> the <span> FunOlympic</span>  Spirit: <br>
+      <a href=""><u>and</u></a> <span>Enjoy</span><br> <span>Ultimate </span> Online <span>Games </span>Experience!
+    </h1>
+  </div>
+
+  {% if user %}
+  <div class="registerbtn">
+      <a href="{{url_for('auth.live')}}">
+          <button type="submit" class="btn">Watch Live</button>
+      </a>
+  </div>
+{% else %}
+  <div class="registerbtn">
+      <a href="{{ url_for('auth.register') }}"><button type="submit" class="btn">Register Now</button></a>
+  </div>
+{% endif %}
+</section>
+
+
+
+
+
+  <div class="carousel-wrapper">
+    <div class="carousel-container">
+      <!-- Repeat the following content-box structure for each item -->
+      
+      <div class="container">
+        <div class="content-box">
+          <div class="pro">
+            <video width="100%" height="100%" controls>
+              <source src="static/img/intro3.mp4" type="video/mp4">
+            </video>
+            <div class="des">
+              <span>Premium combo package 4g</span>
+              <h5>1 Month</h5>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <h4>Rs. 264/-</h4>
+              <a href="{{url_for('auth.watchvideo')}}"><button type="submit" class="btnsmall">Watch Now</button></a>
+            </div>
+          </div>
+        </div>
+        <!-- End content-box -->
+
+        <!-- Repeat the above content-box structure for each item -->
+        <div class="container">
+          <div class="content-box">
+            <div class="pro">
+              <video width="100%" height="100%" controls>
+                <source src="static/img/intro3.mp4" type="video/mp4">
+              </video>
+              <div class="des">
+                <span>Premium unlimited combo package</span>
+                <h5>1 year</h5>
+                <div class="star">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <h4>Rs.5896</h4>
+                <a href="{{url_for('auth.watchvideo')}}"><button type="submit" class="btnsmall">Watch Now</button></a>
+              </div>
+            </div>
+          </div>
+          <!-- End content-box -->
+                 <!-- Repeat the above content-box structure for each item -->
+        <div class="container">
+          <div class="content-box">
+            <div class="pro">
+              <video width="100%" height="100%" controls>
+                <source src="static/img/intro3.mp4" type="video/mp4">
+              </video>
+              <div class="des">
+                <span>Premium  1 day pack</span>
+                <h5>24 hour</h5>
+                <div class="star">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <h4>Rs. 29 lakh</h4>
+                <a href=""><button type="submit" class="btnsmall">Watch Now</button></a>
+              </div>
+            </div>
+          </div>
+          <!-- End content-box -->
+                 <!-- Repeat the above content-box structure for each item -->
+        <div class="container">
+          <div class="content-box">
+            <div class="pro">
+              <video width="100%" height="100%" controls>
+                <source src="static/img/intro3.mp4" type="video/mp4">
+              </video>
+              <div class="des">
+                <span>Premium  3 day pack</span>
+                <h5>3 days</h5>
+                <div class="star">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <h4>Rs. 296</h4>
+                <a href="{{url_for('auth.watchvideo')}}"><button type="submit" class="btnsmall">Watch Now</button></a>
+              </div>
+            </div>
+          </div>
+          <!-- End content-box -->
+                 <!-- Repeat the above content-box structure for each item -->
+        <div class="container">
+          <div class="content-box">
+            <div class="pro">
+              <video width="100%" height="100%" controls>
+                <source src="static/img/intro3.mp4" type="video/mp4">
+              </video>
+              <div class="des">
+                <span>Premium  15 day pack </span>
+                <h5>unlimited 15 days</h5>
+                <div class="star">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <h4>Rs. 296</h4>
+                <a href="{{url_for('auth.watchvideo')}}"><button type="submit" class="btnsmall">Watch Now</button></a>
+              </div>
+            </div>
+          </div>
+          <!-- End content-box -->
+                 <!-- Repeat the above content-box structure for each item -->
+        <div class="container">
+          <div class="content-box">
+            <div class="pro">
+              <video width="100%" height="100%" controls>
+                <source src="static/img/intro3.mp4" type="video/mp4">
+              </video>
+              <div class="des">
+                <span>Land</span>
+                <h5>2 Anna 6 ropani</h5>
+                <div class="star">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <h4>Rs. 29 lakh</h4>
+                <a href="{{url_for('auth.watchvideo')}}"><button type="submit" class="btnsmall">Watch Now</button></a>
+              </div>
+            </div>
+          </div>
+
+        
+          <!-- End content-box -->
+                 <!-- Repeat the above content-box structure for each item -->
+        <div class="container">
+          <div class="content-box">
+            <div class="pro">
+              <video width="100%" height="100%" controls>
+                <source src="static/img/intro3.mp4" type="video/mp4">
+              </video>
+              <div class="des">
+                <span>Land</span>
+                <h5>2 Anna 6 ropani</h5>
+                <div class="star">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <h4>Rs. 29 lakh</h4>
+                <a href="{{url_for('auth.watchvideo')}}"><button type="submit" class="btnsmall">Watch Now</button></a>
+              </div>
+            </div>
+          </div>
+          <!-- End content-box -->
+         
+      </div>
+    </div>
+    
+      
+
+  </div>
+</section>
+
+<div class="livesection">
+ 
+  <div class="live-video-container">
+
+    <h4 class="viewer">2.6k</h4>
+    <h1 ><b>Enojoy Live stream ! with Us</b></h1>
+    <i class="fa-solid fa-eye"></i>
+    <h4>live</h4>
+    <a href="{{url_for('auth.live')}}"><butoon type="submit" class="livebtn">Watch Now</butoon></a>
+     
+    <video src="/static/img/intro.mp4" loop muted autoplay controls width="100%" height="400px" frameborder="0" allowfullscreen ></video>
+    
+<div class="upcomingevent">
+
+  <div class="upcoming-container">
+    <video width="100%" height="100%" controls>
+      <source src="/static/img/intro3.mp4" type="video/mp4">
+    </video>
+    
+    <h3>Long Jump</h3>
+    <span>Date: 525555</span>
+    <button class="btnupcoming">Get entry</button>
+   <h5 class="text1">$10.00-$25.00</h5> 
+
+  </div>
+
+  <div class="upcoming-container">
+    <video width="100%" height="100%" controls>
+      <source src="static/img/intro3.mp4" type="video/mp4">
+    </video>
+    
+    <h3>Long Jump</h3>
+    <span>Date: 525555</span>
+    <button class="btnupcoming">Get entry</button>
+   <h5 class="text1">$10.00-$25.00</h5> 
+
+  </div>
+
+  <div class="upcoming-container">
+    <video width="100%" height="100%" controls>
+      <source src="static/img/intro3.mp4" type="video/mp4">
+    </video>
+    
+    <h3>Long Jump</h3>
+    <span>Date: 525555</span>
+    <button class="btnupcoming">Get entry</button>
+   <h5 class="text1">$10.00-$25.00</h5> 
+
+  </div>
+
+  <div class="upcoming-container">
+    <video width="100%" height="100%" controls>
+      <source src="static/img/intro3.mp4" type="video/mp4">
+    </video>
+    
+    <h3>Long Jump</h3>
+    <span>Date: 525555</span>
+    <button class="btnupcoming">Get entry</button>
+   <h5 class="text1">$10.00-$25.00</h5> 
+
+  </div>
+
+  <div class="upcoming-container">
+    <video width="100%" height="100%" controls>
+      <source src="static/img/intro3.mp4" type="video/mp4">
+    </video>
+    
+    <h3>Long Jump</h3>
+    <span>Date: 525555</span>
+    <button class="btnupcoming">Get entry</button>
+   <h5 class="text1">$10.00-$25.00</h5> 
+
+  </div>
+
+  <div class="upcoming-container">
+    <video width="100%" height="100%" controls>
+      <source src="static/img/intro3.mp4" type="video/mp4">
+    </video>
+    
+    <h3>Long Jump</h3>
+    <span>Date: 525555</span>
+    <button class="btnupcoming">Get entry</button>
+   <h5 class="text1">$10.00-$25.00</h5> 
+
+  </div>
+  <div class="upcoming-container">
+    <video width="100%" height="100%" controls>
+      <source src="static/img/intro3.mp4" type="video/mp4">
+    </video>
+    
+    <h3>Long Jump</h3>
+    <span>Date: 525555</span>
+    <button class="btnupcoming">Get entry</button>
+   <h5 class="text1">$10.00-$25.00</h5> 
+
+  </div>
+  <div class="upcoming-container">
+    <video width="100%" height="100%" controls>
+      <source src="static/img/intro3.mp4" type="video/mp4">
+    </video>
+    
+    <h3>Long Jump</h3>
+    <span>Date: 525555</span>
+    <button class="btnupcoming">Get entry</button>
+   <h5 class="text1">$10.00-$25.00</h5> 
+
+  </div>
+  <div class="upcoming-container">
+    <video width="100%" height="100%" controls>
+      <source src="static/img/intro3.mp4" type="video/mp4">
+    </video>
+    
+    <h3>Long Jump</h3>
+    <span>Date: 525555</span>
+    <button class="btnupcoming">Get entry</button>
+   <h5 class="text1">$10.00-$25.00</h5> 
+
+  </div>
+</div>
+
+  </div>
+</div>
+{% endblock %}

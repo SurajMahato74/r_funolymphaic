@@ -1,0 +1,98 @@
+{% extends 'adminnav.html' %}
+{% block title %}Show Upload{% endblock %}
+{% block content %}
+
+<style>
+    
+    .upload-form {
+        height: 300px;
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .upload-form h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        color: #333;
+        font-weight: bold;
+    }
+
+    input[type="file"],
+    input[type="text"],
+    input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #000;
+        color: #fff;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    input[type="file"]:focus,
+    input[type="text"]:focus,
+    input[type="date"]:focus {
+        outline: none;
+        border-color: #007bff;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+</style>
+   <section style="z-index: 1000; margin-top: 100px;">
+    
+        <div class="upload-forma" style="height: 200px; width: 700px; margin-left: 300px;">
+            <h1>Upload Show</h1>
+            <form method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    <label for="video" class="upload-icon"><i class="fas fa-video"></i> Video:</label>
+                    <input type="file" id="video" name="video" class="form-control-file" required>
+                </div>
+                <div class="form-group">
+                    <label for="title" style="color: white;">Title:</label>
+                    <input type="text" id="title" name="title" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="category" style="color: white;">Category:</label>
+                    <input type="text" id="category" name="category" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="releaseDate" style="color: white;">Release Date:</label>
+                    <input type="date" id="releaseDate" name="releaseDate" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="language" style="color: white;">Language:</label>
+                    <input type="text" id="language" name="language" class="form-control" required>
+                </div>
+                <button type="submit" class="btn-primary">Upload</button>
+            </form>
+        </div>
+        
+</div>
+</section>  
+    {% endblock %}

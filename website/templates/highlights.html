@@ -1,0 +1,104 @@
+{% extends 'roshannav.html' %}
+{% block title %}Highlights{% endblock %}
+{% block content %}
+<style>
+   
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        z-index: 1000;
+    }
+
+    .card {
+        width: 300px;
+        margin: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card img {
+        width: 100%;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        z-index: 1000;
+    }
+
+    .card-content {
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    .card-content h2 {
+        margin-top: 0;
+        font-size: 20px;
+        color: #333;
+        z-index: 1000;
+    }
+
+    .card-content p {
+        color: #666;
+        z-index: 1000;
+    }
+
+    .btna {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        z-index: 1000;
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <img src="/static/img/image3.jpg" alt="Show Image">
+        <div class="card-content">
+            <h2>Cycling Semi Final</h2>
+            <p>The game of final cycle racehas been played and won bt pakistan player.</p>
+            <a href="{{url_for('auth.watchvideo')}}" class="btna">Watch</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="/static/img/image4.jpg" alt="Show Image">
+        <div class="card-content">
+            <h2>Football Semi Final</h2>
+            <p>This game is played in  russia in sunday and won tge game by 5 goals.</p>
+            <a href="{{url_for('auth.watchvideo')}}" class="btna">Watch</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="/static/img/image5.jpg" alt="Show Image">
+        <div class="card-content">
+            <h2>Volleyball</h2>
+            <p>Volleyball game between the china and india is held in whch india won the game</p>
+            <a href="{{url_for('auth.watchvideo')}}" class="btna">Watch</a>
+        </div>
+    </div>
+
+    <!-- Add more cards as needed -->
+</div>
+
+{% endblock %}

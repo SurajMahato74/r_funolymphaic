@@ -1,0 +1,124 @@
+{% extends 'adminnav.html' %}
+{% block title %} User{% endblock %}
+{% block content %}
+
+<style>
+  .content-wrapper{
+    margin-top: -45px;
+    overflow: auto;
+    color: black;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: black;
+}
+
+.card-title {
+    color: #333;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: black;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    color: black;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: black;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    color: black;
+}
+
+.btn{
+  width: 120px;
+}
+
+</style>
+      <!-- partial -->
+      <section style="z-index: 1000; margin-top: 100px; display: flex; justify-content: center;">
+        <div class="content-wrapper">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">User Table</h4>
+                    <div class="table-responsive">
+                     
+                     
+                      <div class="password-form" id="passwordForm" style="display: none; border: 1px solid black; color: black; width: fit-content; padding: 20px; margin-left: 400px;">
+                        <form id="passwordChangeForm" action="{{ url_for('auth.update_password') }}" method="post">
+                          {% if user_data %}
+                          <input type="hidden" id="userEmail" style="color: black;" name="email" value="{{ user_data.email }}">
+                          {% endif %}
+                          <label for="newPassword" style="color: black;">Enter New Password:</label><br>
+                          <input type="password" id="newPassword" name="newPassword" style="color: black;"><br>
+                          <button type="submit" style="margin-left: 12px; width: 150px; color: black;" >Save New Password</button>
+                        </form>
+                      </div>
+                      
+                        <table id="order-listing" class="table">
+                            <thead>
+                                <tr>
+                                    <th>User Id</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Password</th>
+                                    <th>Address</th>
+                                    <th>Contact</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for user in users %}
+                                <tr>
+                                    <td>{{ user.id }}</td>
+                                    <td>{{ user.name }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td>password</td>
+                                    <td>{{ user.country }}</td>
+                                    <td>{{ user.contact_number }}</td>
+                                    <td>
+                                        <label class="badge badge-info">{{ user.status }}</label>
+                                    </td>
+                                    <td>
+                                        <button id="changePasswordBtn" class="btn-outline-primary" style="color: black; background-color: green; margin-left: 20px;">Change Password</button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+      document.getElementById('changePasswordBtn').addEventListener('click', function() {
+          var passwordForm = document.getElementById('passwordForm');
+          if (passwordForm.style.display === 'none') {
+              passwordForm.style.display = 'block';
+          } else {
+              passwordForm.style.display = 'none';
+          }
+      });
+  </script>
+		
+    {% endblock %}  
